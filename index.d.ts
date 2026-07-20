@@ -234,7 +234,7 @@ declare function nlapiDisableField(fieldId: string, value: boolean): void;
  *
  * @since 2012.1
  */
-declare function nlapiLoadSearch(type: string, id: string): nlobjSearch;
+declare function nlapiLoadSearch(type: string | null, id: string): nlobjSearch;
 
 /**
  * Creates a new search. The search can be modified and run as an on demand search, without saving it. Alternatively, calling nlobjSearch.saveSearch(title, scriptId) will save the search to the database, so it can be resused later in the UI or using nlapiLoadSearch(type, id).
@@ -632,7 +632,7 @@ declare function nlapiGetContext(): nlobjContext;
  *
  * @since 2005.0
  */
-declare function nlapiGetUser(): number;
+declare function nlapiGetUser(): string;
 
 /**
  * Return the internal ID for the current user's role. Returns 31 (Online Form User) when called from online forms or "Available without Login" Suitelets.
@@ -640,7 +640,7 @@ declare function nlapiGetUser(): number;
  *
  * @since 2005.0
  */
-declare function nlapiGetRole(): number;
+declare function nlapiGetRole(): string;
 
 /**
  * Return the internal ID for the current user's department.
@@ -648,7 +648,7 @@ declare function nlapiGetRole(): number;
  *
  * @since 2005.0
  */
-declare function nlapiGetDepartment(): number;
+declare function nlapiGetDepartment(): string;
 
 /**
  * Return the internal ID for the current user's location.
@@ -656,7 +656,7 @@ declare function nlapiGetDepartment(): number;
  *
  * @since 2005.0
  */
-declare function nlapiGetLocation(): number;
+declare function nlapiGetLocation(): string;
 
 /**
  * Return the internal ID for the current user's subsidiary.
@@ -664,7 +664,7 @@ declare function nlapiGetLocation(): number;
  *
  * @since 2008.1
  */
-declare function nlapiGetSubsidiary(): number;
+declare function nlapiGetSubsidiary(): string;
 
 /**
  * Return the recordtype corresponding to the current page or userevent script.
